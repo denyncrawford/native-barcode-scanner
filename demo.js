@@ -16,10 +16,10 @@ scanner.on('code', code => {
 
 setTimeout(async () => {
   // Type "Hello World".
-  await robot.typeString("code1lol");
+  robot.typeString("code1lol");
 
   // Press enter.
-  await robot.keyTap("enter");
+  robot.keyTap("enter");
   robot.typeString("code1lol");
 
   // Press enter.
