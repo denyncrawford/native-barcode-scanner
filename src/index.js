@@ -19,11 +19,11 @@ export default class BarcodeScanner extends EventEmitter {
   }
 
   async initHandler() {
-    inputs.on('key.pressed', this._enventHandler)
+    inputs.on('key.pressed', this._enventHandler);
   }
 
-  off() {
-    inputs.removeAllListeners('key.pressed',  this._enventHandler)
+  async off() {
+    inputs.removeListener('key.pressed',  this._enventHandler)
   }
 
 }

@@ -8,6 +8,7 @@ let scanner = new BarcodeScanner({
 
 scanner.on('code', code => {
   console.log(code)
+  scanner.off();
 })
 
 setTimeout(async () => {
@@ -16,12 +17,10 @@ setTimeout(async () => {
 
   // Press enter.
   robot.keyTap("enter");
-
-  scanner.stopScan();
   robot.typeString("code1lol");
 
   // Press enter.
   robot.keyTap("enter");
-  
+
 },1000)
 
