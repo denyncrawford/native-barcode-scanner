@@ -1,6 +1,9 @@
 import BarcodeScanner from './src/index.js'
+import { promisify } from 'util'
 
 import robot from 'robotjs';
+
+const type = promisify(robot.typeString)
 
 let scanner = new BarcodeScanner({
   endKey: 'Intro'
@@ -8,15 +11,15 @@ let scanner = new BarcodeScanner({
 
 scanner.on('code', code => {
   console.log(code)
-  scanner.off();
+  // scanner.off();
 })
 
 setTimeout(async () => {
   // Type "Hello World".
-  robot.typeString("code1lol");
+  await robot.typeString("code1lol");
 
   // Press enter.
-  robot.keyTap("enter");
+  await robot.keyTap("enter");
   robot.typeString("code1lol");
 
   // Press enter.
