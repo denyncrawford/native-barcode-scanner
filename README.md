@@ -1,22 +1,22 @@
 # Native Barcode Scanner 
 
-It is a simple utility inspired by [simple-barcode-scanner](https://github.com/hadeeb/simple-barcode-scanner) but made as a native and global keyboard scanner driver for Node, this means that it doesn't depend on the browser and it listens even when no GUI/UI is open. 
+It is a simple utility inspired by [simple-barcode-scanner](https://github.com/hadeeb/simple-barcode-scanner) but made as a native and global keyboard scanner driver for Node, this means that it doesn't depend on the browser and it listens even when no GUI/UI is focused. 
 
 Most barcode scanners act like a keyboard, NBS handles this by listening for native events without using the DOM API. This is useful for scanning without focusing on any screen and works for multiple devices.
 
 ### Why?
 
-I needed a way to use multiple scanners on a PC without depending on one window being foused. It is not viable nor reliable to use on electron or browser at work machines used by several users at time.
+I needed a way to use multiple scanners on a PC without depending on one window being foused. It is not viable / reliable to use on electron and browser runing on machines used by several users at time.
 
-**Don't scare!** NBS is pretty simple too and it can be used with a sigle scanner o a simple app :D, but with the security that data is not getting lost anymore.
+**Don't scare!** NBS is pretty simple too and it can be used with a sigle scanner on a simple app :D, but with the security that data is not getting lost anymore.
 
 ### How?
 
-Barcode scanners are HID devices also, but theres one trick, they are **FORBIDEN** by some systems... Basically they doesn't allow HID connections for keyboards and mouses for security reasons. So while looking for a solution I found that `node-hid` is not that useful and we can't take a direct connection from the device. 
+Barcode scanners are HID devices also, but there's one trick, they are **FORBIDEN** by some systems... Basically they doesn't allow HID connections for keyboards and mouses for security reasons. So while looking for a solution I found that `node-hid` is not that useful and we can't take a direct connection from the device. 
 
-**So, how it is native?** Well, this is the bittersweet part: We use Java to capture native/global key bindings and you have to install it :/ but it is not that hard :B. This is because neither Node or Deno support native events for keybindings. Anyway, it is incredibly fast as well. 
+**So, how it is native?** Well, this is the bittersweet part: We use Java to capture native/global keys and keybindings events, and yeah... you have to install it :/ but it is not that hard :B (I mean, probably you have it already installed, you know... minecraft). This is because neither Node or Deno support native events for keyboards and mices. Anyway, it is incredibly fast as well. 
 
-> I'm currently looking for a C++ solution like ioHook but it's installation is a little bit cursed, and it crashes all the time (at least for me and my builds) if you want to contribute with a native way to listen to keybindings and pipe them to JS please make a PR :D.
+> I'm currently looking for a C++ solution like ioHook but its installation is a little bit cursed, and it crashes all the time (at least for me and my builds) if you want to contribute with a native way to listen to key events and pipe them to JS please make a PR :D.
 
 ##  📦 Install
 
@@ -34,7 +34,7 @@ const BarcodeScanner = require("native-barcode-scanner");
 
 ## 🖥️ Usage
 
-You can use NBS as a global listener or as a dedicate device listener.
+You can use NBS as a global listener or as a dedicated device listener.
 
 ### Basic (global):
 
@@ -58,9 +58,11 @@ scanner.off();
 
 ### Dedicated device:
 
-Some devices allow code prefixing function and you can use it to scope the NBS events.
+As I said before, some devices allow code prefixing functions and you can use it to scope the NBS events.
 
-For this you have to prefix your device with your choosen device ID and then specify it at `options.devicePrefix`.
+To do this, you have to prefix your device with your choosen device ID string and then specify it at `options.devicePrefix`.
+
+> **Note**: NBS doesn't prefix your device, you must use one that does. Please read your device user guide. 
 
 ```javascript
 import BarcodeScanner from "native-barcode-scanner";

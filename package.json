@@ -20,9 +20,7 @@
   "author": "denyn_crawford",
   "license": "MIT",
   "dependencies": {
-    "esm": "^3.2.25",
-    "gkm": "^0.2.0",
-    "iohook": "^0.7.2"
+    "gkm": "^0.2.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.10",
@@ -32,6 +30,7 @@
     "@rollup/plugin-commonjs": "^17.0.0",
     "robotjs": "^0.6.0",
     "rollup-plugin-node-polyfills": "^0.2.1",
-    "rollup-plugin-node-resolve": "^5.2.0"
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "esm": "^3.2.25"
   }
 }
