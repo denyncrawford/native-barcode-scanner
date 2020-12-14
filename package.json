@@ -12,7 +12,12 @@
     "scanner",
     "driver"
   ],
-  "author": "Denyncrawford",
+  "homepage": "https://github.com/denyncrawford/native-barcode-scanner#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/denyncrawford/native-barcode-scanner"
+  },
+  "author": "denyn_crawford",
   "license": "MIT",
   "dependencies": {
     "esm": "^3.2.25",
