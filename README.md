@@ -1,0 +1,1 @@
+Native Barcode Scanner is a simple utility inspired by [this module](https://github.com/hadeeb/simple-barcode-scanner) but made as a native and global keyboard scanner hadler for Node, this means that it doesn't depend on the browser and it listens even when no GUI/UI is open. 
