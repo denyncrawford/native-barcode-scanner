@@ -4,7 +4,7 @@ const config = {
   input: 'src/index.js',
   output: [
     {
-      file: 'dist/index.js',
+      file: 'dist/index.module.js',
       format: 'cjs',
       exports: 'auto'
     },

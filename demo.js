@@ -1,9 +1,6 @@
 import BarcodeScanner from './src/index.js'
-import { promisify } from 'util'
 
 import robot from 'robotjs';
-
-const type = promisify(robot.typeString)
 
 let scanner = new BarcodeScanner({
   endKey: 'Intro'
