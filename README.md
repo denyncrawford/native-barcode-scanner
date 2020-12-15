@@ -45,7 +45,7 @@ import BarcodeScanner from "native-barcode-scanner";
 
 const options = {...foo}
 
-const scanner = BarcodeScanner(options);
+const scanner = new BarcodeScanner(options);
 
 // Add a global listener
 scanner.on('code', code => {
@@ -71,7 +71,7 @@ const options = {
   devicePrefix: 'id1'
 }
 
-const scanner = BarcodeScanner(options);
+const scanner = new BarcodeScanner(options);
 
 // Add a global device scoped listener
 scanner.on('code', code => {
