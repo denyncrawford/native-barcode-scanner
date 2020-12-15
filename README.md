@@ -38,7 +38,7 @@ You can use NBS as a global listener or as a dedicated device listener.
 
 ### Basic (global):
 
-> This will listens to al devices and will catch all codes from the multiple emitting devices. This is the way if you have just one device or if your device doesn't allow prefixing. 
+> This will listen to all devices and will catch all codes from the multiple emitting devices. This is the way if you have just one device or if your device doesn't allow prefixing. 
 
 ```javascript
 import BarcodeScanner from "native-barcode-scanner";
